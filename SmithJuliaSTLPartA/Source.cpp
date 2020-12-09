@@ -12,27 +12,32 @@ char character(char start, int offset);
 
 //Exceptions!--------------------------------------------
 string invalidCharacterException = "Sorry, Invalid Character";
-string invalidRangeException = "Sorry, Invalid Range"
+string invalidRangeException = "Sorry, Invalid Range";
 
 
 //Main with driver to test the the character function!---
 int main(char start, int offset)
 {
-
+	
 }
 
 //Character Function!------------------------------------
 char character(char start, int offset)
 {
-	if (isalnum(start) && start > 0)
+	if (isalnum(start) || offset >= 0)
 	{
 		return 'b';
 	}
-	else
+	else if (ispunct(start) || ispunct(offset))
 	{
 		throw invalidCharacterException;
 	}
-	
-	if (ispunct(start))
+	//-------------------------------------------------------
+	if (offset < 0)
+	{
+		throw invalidRangeException;
+	}
+
+
 
 }
